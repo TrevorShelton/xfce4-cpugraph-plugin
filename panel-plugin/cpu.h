@@ -70,10 +70,14 @@ enum CPUGraphColorMode
 enum CPUGraphUpdateRate
 {
     RATE_FASTEST = 0,
-    RATE_FAST = 1,
-    RATE_NORMAL = 2,
-    RATE_SLOW = 3,
-    RATE_SLOWEST = 4,
+    RATE_EXTREME = 1,
+    RATE_FASTER = 2,
+    RATE_FAST = 3,
+    RATE_NORMAL = 4,
+    RATE_SLOW = 5,
+    RATE_SLOWER = 6,
+    RATE_GLACIAL = 7,
+    RATE_SLOWEST = 8
 };
 
 enum CPUGraphColorNumber

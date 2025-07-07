@@ -248,9 +248,13 @@ Settings::read (XfcePanelPlugin *plugin, const shared_ptr<CPUGraph> &base)
         switch (rate)
         {
             case RATE_FASTEST:
+            case RATE_EXTREME:
+            case RATE_FASTER:
             case RATE_FAST:
             case RATE_NORMAL:
             case RATE_SLOW:
+            case RATE_SLOWER:
+            case RATE_GLACIAL:
             case RATE_SLOWEST:
                 break;
             default:

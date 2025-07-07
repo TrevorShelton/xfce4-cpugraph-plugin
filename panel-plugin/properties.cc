@@ -393,11 +393,15 @@ static void
 setup_update_interval_option (GtkBox *vbox, GtkSizeGroup *sg, const shared_ptr<CPUGraphOptions> &data)
 {
     const vector<string> items = {
-        _("Fastest (~250ms)"),
+        _("Fastest (~25ms)"),
+        _("Extreme (~100ms)"),
+        _("Faster (~250ms)"),
         _("Fast (~500ms)"),
         _("Normal (~750ms)"),
         _("Slow (~1s)"),
-        _("Slowest (~3s)")
+        _("Slower (~2s)"),
+        _("Glacial (~3s)"),
+        _("Slowest (~5s)")
     };
 
     create_drop_down (vbox, sg, _("Update Interval:"), items, data->base->update_interval,

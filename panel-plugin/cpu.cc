@@ -961,6 +961,10 @@ get_update_interval_ms (CPUGraphUpdateRate rate)
     switch (rate)
     {
         case RATE_FASTEST:
+            return 25;
+        case RATE_EXTREME:
+            return 100;
+        case RATE_FASTER:
             return 250;
         case RATE_FAST:
             return 500;
@@ -968,8 +972,12 @@ get_update_interval_ms (CPUGraphUpdateRate rate)
             return 750;
         case RATE_SLOW:
             return 1000;
-        case RATE_SLOWEST:
+        case RATE_SLOWER:
+            return 2000;
+        case RATE_GLACIAL:
             return 3000;
+        case RATE_SLOWEST:
+            return 5000;
         default:
             return 750;
     }
