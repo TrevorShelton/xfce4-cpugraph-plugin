@@ -828,7 +828,7 @@ static Propagation
 draw_bars_cb (cairo_t *cr, const shared_ptr<CPUGraph> &base)
 {
     GtkAllocation alloc;
-    const bool horizontal = (base->bars.orientation == GTK_ORIENTATION_HORIZONTAL);
+    const bool horizontal = (base->bars.orientation == GTK_ORIENTATION_HORIZONTAL) ^ base->bars_perpendicular;
 
     gtk_widget_get_allocation (base->bars.draw_area, &alloc);
 
@@ -1011,6 +1011,21 @@ CPUGraph::set_bars (bool has_bars_arg)
         else
         {
             delete_bars ();
+        }
+    }
+}
+
+void
+CPUGraph::set_bars_perpendicular (bool bars_perpendicular_arg)
+{
+    if (bars_perpendicular != bars_perpendicular_arg)
+    {
+        bars_perpendicular = bars_perpendicular_arg;
+        if (has_bars)
+        {
+            delete_bars ();
+            create_bars (xfce_panel_plugin_get_orientation (plugin));
+            set_bars_size ();
         }
     }
 }
