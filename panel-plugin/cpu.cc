@@ -857,8 +857,7 @@ draw_bars_cb (cairo_t *cr, const shared_ptr<CPUGraph> &base)
     }
     else
     {
-        const guint SPACE = 3;
-        breadth -= SPACE * (base->nr_cores - 1);
+        breadth -= BAR_SPACE * (base->nr_cores - 1);
         breadth /= base->nr_cores;
 
         const xfce4::RGBA *active_color = nullptr;
@@ -888,9 +887,9 @@ draw_bars_cb (cairo_t *cr, const shared_ptr<CPUGraph> &base)
             }
 
             if (horizontal)
-                cairo_rectangle (cr, 0, (breadth+SPACE)*i, usage, breadth);
+                cairo_rectangle (cr, 0, (breadth+BAR_SPACE)*i, usage, breadth);
             else
-                cairo_rectangle (cr, (breadth+SPACE)*i, length-usage, breadth, usage);
+                cairo_rectangle (cr, (breadth+BAR_SPACE)*i, length-usage, breadth, usage);
             fill = true;
         }
         if (fill)
