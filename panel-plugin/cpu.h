@@ -38,7 +38,7 @@
 #include "os.h"
 
 constexpr auto BORDER = 8;
-constexpr auto BAR_SPACE = 3;
+constexpr auto BAR_SPACE = 2;
 constexpr auto STATS_SMT_BY_DEFAULT = false;
 constexpr auto HIGHLIGHT_SMT_BY_DEFAULT = false;
 constexpr auto MAX_HISTORY_SIZE = 100 * 1000;
